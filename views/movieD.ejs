@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+    <div class="image"></div>
+    <div class="blur">
+        <div class="d-flex justify-content-center">
+            <form action="/insertMovie" method="post" enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <td>Enter Movie Name</td>
+                        <td><input type="text" name="name" class="w-100 my-3"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Enter Movie Budget</td>
+                        <td><input type="text" name="budget" class="w-100"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Enter Movie Genre</td>
+                        <td><input type="checkbox" value="Action" name="genre[]" class="my-3"> Action
+                            <input type="checkbox" value="Comedy" name="genre[]"> Comedy
+                            <input type="checkbox" value="Horrer" name="genre[]"> Horrer
+                            <input type="checkbox" value="Drama" name="genre[]"> Drama
+                            <input type="checkbox" value="Romance" name="genre[]"> Romance
+                            <input type="checkbox" value="Thriller" name="genre[]"> Thriller
+                            <input type="checkbox" value="Adventure" name="genre[]"> Adventure
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Enter Movie Director</td>
+                        <td><input type="text" name="director" class="w-100"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Enter Movie Plots</td>
+                        <td><textarea name="plots" class="w-100 my-3"></textarea></td>
+                    </tr>
+
+                    <tr>
+                        <td>Enter Zone</td>
+                        <td><input type="radio" value="India" name="zone"> India
+                            <input type="radio" value="India" name="zone"> United Kingdom
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Enter Movie Hero Name</td>
+                        <td><input type="text" name="hero" class="w-100 my-3"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Enter Movie Heroine Name</td>
+                        <td><input type="text" name="heroine" class="w-100 my-3"></td>
+                    </tr>
+
+                    <% var Rateing=[1,2,3,4,5,6,7,8,9,10] %>
+                        <tr>
+                            <td>Select Rating</td>
+                            <td><select name="rating" class="w-100">
+                                    <option value="">--Select Rate--</option>
+                                    <% for(var i=0; i<Rateing.length; i++){ %>
+                                        <option value="<%= Rateing[i] %>">
+                                            <%= Rateing[i] %>
+                                        </option>
+                                        <% } %>
+                                </select></td>
+                        </tr>
+
+                        <tr>
+                            <td>Enter Movie Poster</td>
+                            <td><input type="file" name="poster" class="my-3"></td>
+                        </tr>
+
+                        <tr>
+
+                            <td colspan="2" class="text-center btn-light"><input type="submit" class="btn btn-light"
+                                    name="submit" value="Add Movie">
+                                <a href="/view_all" class="btn btn-light">View Movie</a>
+                            </td>
+                        </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

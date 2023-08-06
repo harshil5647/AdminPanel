@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="/css/style.css">
+<div class="container">
+  <form method="post" action="/viewAllDetail"
+    style="display: flex; justify-content:center; flex-wrap: wrap; margin-top: 100px;">
+    <% for(var mov of Data){ %>
+      <div class="card mx-5 mb-5 text-center" style="width: 300px;">
+        <img src="<%= mov.poster %>" class="card-img-top" height="400" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= mov.name %>
+          </h5>
+          <p class="card-text text-truncate">
+            <%= mov.plots %>
+          </p>
+          <a href="/viewAllDetail/<%= mov.id %>" class="btn btn-primary">Read More</a>
+
+          <a href="/addMovie" class="btn btn-primary">Add Movie</a>
+        </div>
+      </div>
+      <% } %>
+
+  </form>
+</div>
+
+<a href="/viewAllDetail/<%= mov.id %>">Read More</a>

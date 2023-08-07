@@ -6,6 +6,7 @@ const Movie_Path = '/uploads';
 
 const path = require('path');
 
+// wskxkx
 const movieSchema = mongoose.Schema({
     name :{
         type : String,
